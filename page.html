@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_self">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <meta name="apple-mobile-web-app-capable" content="width=device-width, initial-scale=1"/>
+    <meta name="mobile-web-app-capable" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <?!= include("page-css");?>
+
+  </head>
+  <body>
+  <div class="row valign-wrapper">
+    <div class="col s3 center-align" style="padding: 0;">
+      <img class="logo" src="https://docs.google.com/drawings/d/e/2PACX-1vShoyFwoZ-JD3DXq-a5FHuSHLZjai2ZEOjQIfi8t3JcFKeC8NXUNoZDEwYQaQpOByqnWnFkDnoR0_9k/pub?w=85&amp;h=47">
+    </div>
+    <div class="col s8" style="padding: 0;">
+     <h5 class="left-align">CONSULTA OFTALMOLÓGICA DE TELEMEDICINA</h5>
+    </div>
+  </div>
+  <div class="container">
+  <div class="container-form" id="form" style="display:block">
+   <div class="row z-depth-3" id="datos">
+    <div class="row">
+          <div class="col s12">
+            <h4 class="center-align" id="formuTest">TEST DE AGUDEZA VISUAL</h4>
+          </div>
+        </div>
+        <div class="row">
+      <div class="input-field col s12">
+       <p>Este test permite al médico conocer de forma objetiva las filas de visión en cada ojo y también aproximar la necesidad de corrección para la lectura.</p>
+       </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+           <input id="email" type="email" class="validate" required>
+           <label for="email">Email</label>
+         </div>
+       </div>
+       <div class="row">
+         <div class="input-field col s6">
+           <input id="nombre" type="text" class="validate" required>
+           <label for="nombre">Nombre</label>
+         </div>
+         <div class="input-field col s6">
+           <input id="apellido" type="text" class="validate" required>
+           <label for="apellido">Apellido</label>
+         </div>
+       </div>
+       <div class="row">
+         <div class="input-field col s6">
+           <input id="dni" placeholder="Escriba los 8 numeros de su DNI sin puntos" type="text" class="validate" required pattern="^\d{8}$">
+           <label for="dni">DNI</label>
+         </div>
+       </div>
+       <div class="row">
+       <p>
+        <label for="acepto">
+          <input class="with-gap" id="acepto" name="acepto" type="radio" value="acepto" required>
+          <span>Acepto realizar este Test para consulta de Telemedicina</span>
+        </label>
+       </p>
+       </div>
+    
+    </div> <!--CIERRA LA ROW -->
+      
+     <div id="datosTest" clas="z-depth-3"> 
+      <div class="row">
+         <div>
+         <p>Colóquese a unos 1.2 metros frente a la imagen. Haga la prueba con buena luminosidad y con corrección (anteojos) si usted la utiliza. Haga la prueba con un ojo a la vez, cubra el otro ojo sin presionarlo. Lea las letras desde la más grande a la más pequeña. Para que el examen sea más fácil, permita que una segunda persona vaya indicando las letras que usted debe leer en las diferentes líneas de letras. Deberá completar cual es el valor que observa en cada fila, al lado de cada letra obtendrá ese valor.</p>
+         </div>
+         <div class="col s12 center-align">
+           <img class="rejilla" src="https://docs.google.com/drawings/d/e/2PACX-1vRo-p0pfeU-FLTkIWUJLxSoVr5bqti54oGivMCfOl_MAYfZZ8L5y8k4OX016NWd8BofYkunNEVLgvmN/pub?w=608&amp;h=693">
+         </div>
+      </div>
+      
+      <div class="row">
+       <h6>OJO DERECHO</h6>
+       <div class="input-field col s12">
+       <select id="derecho">
+       <option value="" disabled selected>Seleccione las opciones</option>
+       <option value="20/200">20/200</option>
+       <option value="20/100">20/100</option>
+       <option value="20/70">20/70</option>
+       <option value="20/50">20/50</option>
+       <option value="20/40">20/40</option>
+       <option value="20/30">20/30</option>
+       <option value="20/20">20/20</option>
+       <option value="CUENTA DEDOS (puedo contar dedos a 1 metro)">CUENTA DEDOS (puedo contar dedos a 1 metro)</option>
+       <option value="VISION BULTOS (puedo identificar bultos a 1 metro)">VISION BULTOS (puedo identificar bultos a 1 metro)</option>
+       <option value="VISION LUZ (puedo identificar una luz de frente)">VISION LUZ (puedo identificar una luz de frente)</option>
+       <option value="NLP (No puedo percibir la luz)">NLP (No puedo percibir la luz)</option>
+       </select>
+       </div>
+        
+      </div>
+      
+      <div class="row">
+       <h6>OJO IZQUIERDO</h6>
+       <div class="input-field col s12">
+       <select id="izquierdo">
+       <option value="" disabled selected>Seleccione las opciones</option>
+       <option value="20/200">20/200</option>
+       <option value="20/100">20/100</option>
+       <option value="20/70">20/70</option>
+       <option value="20/50">20/50</option>
+       <option value="20/40">20/40</option>
+       <option value="20/30">20/30</option>
+       <option value="20/20">20/20</option>
+       <option value="CUENTA DEDOS (puedo contar dedos a 1 metro)">CUENTA DEDOS (puedo contar dedos a 1 metro)</option>
+       <option value="VISION BULTOS (puedo identificar bultos a 1 metro)">VISION BULTOS (puedo identificar bultos a 1 metro)</option>
+       <option value="VISION LUZ (puedo identificar una luz de frente)">VISION LUZ (puedo identificar una luz de frente)</option>
+       <option value="NLP (No puedo percibir la luz)">NLP (No puedo percibir la luz)</option>
+       </select>
+       </div>
+        
+      </div>
+      
+     <div class="row">
+       <button id="btn" class="btn waves-effect btn-large waves-light" type="submit" onclick="showSuccess();">Enviar
+          <i class="material-icons right">send</i>
+       </button>
+      </div>
+    </div> <!--CIERRA ID DATOSTEST -->
+    
+   </div> <!--CIERRA ID FORM -->
+  
+    
+    <div id="success" class="z-depth-3" style="display:none">
+        <h4 class="center-align"><span id="paciente"></span> su formulario se cargó con éxito</h4>
+        <h6 class="center-align"> Recibirá un correo electrónico con los datos registrados.</h6>
+        <h6 class="center-align"> En breve nos pondremos en contacto con ud.</h6>
+    </div>
+    
+    
+    
+     <div class="row">
+          <div class="input-field col s12" id = "progress">
+          <br><br><br>
+          </div>
+     </div>
+
+    
+   </div> <!--CIERRA EL CONTAINER -->
+   
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://gumroad.com/js/gumroad.js"></script>
+
+   
+   <?!= include("page-js");?>      
+   
+    
+  </body>
+</html>
+
+
