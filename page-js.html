@@ -1,0 +1,112 @@
+ <script>
+ 
+ 
+       document.addEventListener('DOMContentLoaded', function() {
+         var elems = document.querySelectorAll('select');
+         var instances = M.FormSelect.init(elems);
+        });
+    
+       document.addEventListener('DOMContentLoaded', function() {
+      
+       document.getElementById("btn").addEventListener("click",buttonClickAction);
+         
+    
+       });
+       
+        
+          
+          
+          function buttonClickAction() {
+          
+              var toValidate = {
+                email: "Ingrese su email",
+                nombre: "Ingrese su nombre",
+                apellido: "Ingrese su apellido",
+                dni: "Ingrese su DNI",
+                acepto: "Acepte realizar el test",
+                derecho: "Seleccione una opción para su ojo derecho",
+                izquierdo: "Seleccione una opción para su ojo izquierdo",
+              };
+              
+            
+              
+              var idKeys = Object.keys(toValidate);
+              
+              
+              var allValid = true;
+              idKeys.forEach(function(id){
+                 var isValid = checkIfValid(id,toValidate[id]);
+                 if(!isValid){
+                     allValid = false;
+                 }
+              });
+              
+                
+              
+              if(allValid){
+                 addRecord();
+              confirmacion();
+              
+              } 
+            }
+            
+              function confirmacion() {
+                 var pacienteN = document.getElementById("nombre").value;
+                 var pacienteA = document.getElementById("apellido").value;
+                 
+                 document.getElementById("paciente").innerHTML= pacienteN+" "+pacienteA;
+                 
+                 var formulario = document.getElementById('form');
+                 var exito = document.getElementById('success');
+                 formulario.style.display = 'none';
+                 exito.style.display = 'block';
+            } 
+            
+
+           
+           function checkIfValid(elID,message){
+              var isValid = document.getElementById(elID).checkValidity();
+            
+              if(!isValid){
+               M.toast({html: message});
+               return false;
+              }
+              return true;
+           }
+           
+           function mostrarTexto(derechoOtro) {
+            var OtroTexto = document.getElementById("derOtro");
+            OtroTexto.style.display = 'block';
+           }
+           
+           function mostrarTextoI(izquierdoOtro) {
+            var OtroTextoI = document.getElementById("izqOtro");
+            OtroTextoI.style.display = 'block';
+           }
+
+           
+           function addRecord() {
+           
+           var userInfo = {};
+            
+
+            userInfo.email = document.getElementById("email").value;
+            userInfo.nombre = document.getElementById("nombre").value;
+            userInfo.apellido = document.getElementById("apellido").value;
+            userInfo.dni = document.getElementById("dni").value;
+            userInfo.acepto = document.querySelector('input[name=acepto]:checked').value;
+            userInfo.derecho = document.getElementById('derecho').M_FormSelect.input.value;
+            userInfo.izquierdo = document.getElementById('izquierdo').M_FormSelect.input.value;
+          
+      
+           google.script.run.userClicked(userInfo);
+           
+           }
+           
+          
+           
+           
+           
+
+    
+    </script>
